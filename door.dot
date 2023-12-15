@@ -1,6 +1,16 @@
 digraph G {
-    A -> B;
-    B -> C;
-    C -> D;
-    D -> E;
+    rankdir=LR
+    door [ label = "The Door" shape = box ]
+    level [ label = "Level" shape = box ]
+    level_comment [ label = "地图，游戏的主要运行场景" shape = box ]
+    actor [ label = "Actor" shape = box ]
+    mesh [ label = "Static Mesh组件" shape = box ]
+    mesh_comment [ label = "门的外观控制" shape = box ]
+    box [ label = "Box组件" shape = box ]
+    box_comment [ label = "碰撞事件作为门的开关" shape = box ]
+
+    door -> level -> level_comment
+    door -> actor
+    actor -> mesh -> mesh_comment
+    actor -> box -> box_comment
 }
